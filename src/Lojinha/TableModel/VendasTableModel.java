@@ -41,7 +41,7 @@ public class VendasTableModel extends AbstractTableModel {
             case 3:
                 return vendas.get(rowIndex).getQuantidade();
             case 4:
-                return vendas.get(rowIndex).getData_venda();
+                return vendas.get(rowIndex).getDataVenda();
             case 5:
                 if (vendas.get(rowIndex).isPago()) {
                     return "Sim";

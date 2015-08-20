@@ -27,7 +27,7 @@ public class FormEstoque extends javax.swing.JFrame {
         setLocation(500, 100);
 
         jLabelNome.setText(produto.getNome());
-        jLabePreco.setText("R$ " + produto.getPreco_venda());
+        jLabePreco.setText("R$ " + produto.getPrecoVenda());
 
         addWindowListener(new WindowAdapter() {
             @Override
@@ -191,7 +191,7 @@ public class FormEstoque extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         int quantidade = 0;
-        double custo = 0;
+        float custo = 0;
 
         try {
             if (jTextFieldQtd.getText().isEmpty()) {
@@ -200,7 +200,7 @@ public class FormEstoque extends javax.swing.JFrame {
                 quantidade = Integer.parseInt(jTextFieldQtd.getText());
             }
 
-            custo = Double.parseDouble(jTextFieldPreco.getText().replaceAll(",", "."));
+            custo = Float.parseFloat(jTextFieldPreco.getText().replaceAll(",", "."));
 
         } catch (Throwable e) {
             JOptionPane.showMessageDialog(null, "A quantidade e o preço devem ser numeros.", "Erro ao salvar estoque", 2);
@@ -218,7 +218,7 @@ public class FormEstoque extends javax.swing.JFrame {
         String data = dataF.format(new Date(System.currentTimeMillis()));
 
         Caixa caixa = new Caixa();
-        caixa.setData_caixa(data);
+        caixa.setDataCaixa(data);
         caixa.setDescricao("Reposição - " + produto.getNome() + " (" + quantidade + ")");
         caixa.setPreco(custo * quantidade);
         caixa.setStatus(true);

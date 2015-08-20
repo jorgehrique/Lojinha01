@@ -83,7 +83,7 @@ public class FormCadastro extends javax.swing.JFrame {
             if (produto != null) {
                 jLabelProduto.setText(produto.getId()
                         + " : " + produto.getNome());
-                jTextPreco.setText("" + produto.getPreco_venda());
+                jTextPreco.setText("" + produto.getPrecoVenda());
                 jLabelQtd.setText("Máx : " + produto.getQuantidade());
             } else {
                 jLabelProduto.setText("Produto não encontrado");
@@ -316,12 +316,11 @@ public class FormCadastro extends javax.swing.JFrame {
         //verificarCliente();
         //verificarProduto(); bug no preço
         Vendas venda = new Vendas();
-        double preco;
-        double quantidade;
+        float preco, quantidade;
 
         try {
-            preco = Double.parseDouble(jTextPreco.getText().replaceAll(",", "."));
-            quantidade = Double.parseDouble(jTextQtd.getText().replaceAll(",", "."));
+            preco = Float.parseFloat(jTextPreco.getText().replaceAll(",", "."));
+            quantidade = Float.parseFloat(jTextQtd.getText().replaceAll(",", "."));
 
             if ((("".equals(jTextIdCliente.getText())
                     || "".equals(jTextIdProduto.getText()))
@@ -362,8 +361,8 @@ public class FormCadastro extends javax.swing.JFrame {
                 venda.setStatus(true);
                 venda.setCliente(cliente);
                 venda.setProduto(produto);
-                venda.setData_venda(data);
-                venda.setPreco_vendido(preco);
+                venda.setDataVenda(data);
+                venda.setPrecoVendido(preco);
                 venda.setQuantidade((int) quantidade);
 
                 vendasRN = new VendasRN();
@@ -380,7 +379,7 @@ public class FormCadastro extends javax.swing.JFrame {
                     caixa.setPreco(preco * quantidade);
                     caixa.setStatus(true);
                     caixa.setTipo(true);
-                    caixa.setData_caixa(data);
+                    caixa.setDataCaixa(data);
 
                     CaixaRN caixaRN = new CaixaRN();
                     caixaRN.salvar(caixa);

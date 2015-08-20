@@ -437,13 +437,13 @@ public class FormVendas extends javax.swing.JFrame {
                     // Caixa
                     Caixa caixa = new Caixa();
                     caixa.setDescricao("Venda - " + venda.getProduto().getNome() + " (" + venda.getQuantidade() + ")");
-                    caixa.setPreco(venda.getPreco_vendido() * venda.getQuantidade());
+                    caixa.setPreco(venda.getPrecoVendido() * venda.getQuantidade());
                     caixa.setStatus(true);
                     caixa.setTipo(true);
 
                     SimpleDateFormat dataF = new SimpleDateFormat("dd/MM/yyyy");
                     String data = dataF.format(new Date(System.currentTimeMillis()));
-                    caixa.setData_caixa(data);
+                    caixa.setDataCaixa(data);
 
                     CaixaRN caixaRN = new CaixaRN();
                     caixaRN.salvar(caixa);

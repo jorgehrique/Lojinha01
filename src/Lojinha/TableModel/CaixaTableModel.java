@@ -39,7 +39,7 @@ public class CaixaTableModel extends AbstractTableModel {
             case 2:
                 return "R$ " + caixa.get(rowIndex).getPreco();
             case 3:
-                return caixa.get(rowIndex).getData_caixa();
+                return caixa.get(rowIndex).getDataCaixa();
             default:
                 return null;
         }

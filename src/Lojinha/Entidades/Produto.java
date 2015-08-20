@@ -17,7 +17,7 @@ public class Produto implements Serializable {
     @GeneratedValue
     private int id;
 
-    @Column
+    @Column(length = 25)
     private String nome;
 
     @Column
@@ -26,8 +26,8 @@ public class Produto implements Serializable {
     @Column
     private int quantidade;
 
-    @Column
-    private double preco_venda;
+    @Column(name = "preco_venda")
+    private float precoVenda;
 
     // sets e gets
     public boolean isStatus() {
@@ -38,12 +38,12 @@ public class Produto implements Serializable {
         this.status = status;
     }
 
-    public double getPreco_venda() {
-        return preco_venda;
+    public float getPrecoVenda() {
+        return precoVenda;
     }
 
-    public void setPreco_venda(double preco_venda) {
-        this.preco_venda = preco_venda;
+    public void setPrecoVenda(float precoVenda) {
+        this.precoVenda = precoVenda;
     }
 
     public int getQuantidade() {

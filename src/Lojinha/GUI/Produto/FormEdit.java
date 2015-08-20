@@ -23,7 +23,7 @@ public class FormEdit extends javax.swing.JFrame {
 
         jLabelId.setText("" + produto.getId());
         jTextNome.setText(produto.getNome());
-        jTextPreco.setText("" + produto.getPreco_venda());
+        jTextPreco.setText("" + produto.getPrecoVenda());
 
         addWindowListener(new WindowAdapter() {
             @Override
@@ -187,10 +187,10 @@ public class FormEdit extends javax.swing.JFrame {
         if (!"".equals(jTextNome.getText())
                 && !"".equals(jTextPreco.getText())) {
             try {
-                double preco = Double.parseDouble(jTextPreco.getText().replaceAll(",", "."));
+                float preco = Float.parseFloat(jTextPreco.getText().replaceAll(",", "."));
 
                 produto.setNome(jTextNome.getText());
-                produto.setPreco_venda(preco);
+                produto.setPrecoVenda(preco);
 
                 ProdutoRN produtoRN = new ProdutoRN();
                 produtoRN.atualizar(produto);

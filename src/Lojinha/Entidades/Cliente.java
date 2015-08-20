@@ -19,31 +19,31 @@ public class Cliente implements Serializable {
     @GeneratedValue
     private int id;
 
-    @Column
+    @Column(length = 45)
     private String nome;
 
-    @Column
+    @Column(length = 45)
     private String descricao;
 
     @Column
     private boolean status;
 
-    @Column
+    @Column(length = 15)
     private String telefone1;
 
-    @Column
+    @Column(length = 15)
     private String telefone2;
 
-    @Column
+    @Column(length = 45)
     private String cidade;
 
     @Column
     private int num;
 
-    @Column
+    @Column(length = 15)
     private String estado;
 
-    @Column
+    @Column(length = 45)
     private String rua;
 
     @OneToMany(mappedBy = "cliente")

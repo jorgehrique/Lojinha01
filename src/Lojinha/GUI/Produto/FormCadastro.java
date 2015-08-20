@@ -148,12 +148,12 @@ public class FormCadastro extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        double preco = 0;
+        float preco = 0;
 
         if (!"".equals(jTextNome.getText())
                 && !"".equals(jTextPreco.getText())) {
             try {
-                preco = Double.parseDouble(jTextPreco.getText().replaceAll(",", "."));
+                preco = Float.parseFloat(jTextPreco.getText().replaceAll(",", "."));
 
             } catch (Throwable e) {
                 JOptionPane.showMessageDialog(null,
@@ -163,7 +163,7 @@ public class FormCadastro extends javax.swing.JFrame {
             Produto produto = new Produto();
             produto.setStatus(true);
             produto.setNome(jTextNome.getText());
-            produto.setPreco_venda(preco);
+            produto.setPrecoVenda(preco);
             produto.setQuantidade(0);
 
             ProdutoRN produtoRN = new ProdutoRN();

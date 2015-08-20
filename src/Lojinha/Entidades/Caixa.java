@@ -9,7 +9,7 @@ import javax.persistence.Table;
 import org.hibernate.annotations.SQLDelete;
 
 @Entity
-@Table(name = "Caixa")
+@Table(name = "caixa")
 @SQLDelete(sql = "update Caixa set status = 0 where id = ?")
 public class Caixa implements Serializable {
 
@@ -17,7 +17,7 @@ public class Caixa implements Serializable {
     @GeneratedValue
     private int id;
 
-    @Column
+    @Column(length = 60)
     private String descricao;
 
     @Column
@@ -27,10 +27,10 @@ public class Caixa implements Serializable {
     private boolean status;
 
     @Column
-    private double preco;
+    private float preco;
 
-    @Column
-    private String data_caixa;
+    @Column(name = "data_caixa", length = 11)
+    private String dataCaixa;
 
     public int getId() {
         return id;
@@ -64,19 +64,19 @@ public class Caixa implements Serializable {
         this.status = status;
     }
 
-    public double getPreco() {
+    public float getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(float preco) {
         this.preco = preco;
     }
 
-    public String getData_caixa() {
-        return data_caixa;
+    public String getDataCaixa() {
+        return dataCaixa;
     }
 
-    public void setData_caixa(String data_caixa) {
-        this.data_caixa = data_caixa;
+    public void setDataCaixa(String dataCaixa) {
+        this.dataCaixa = dataCaixa;
     }
 }

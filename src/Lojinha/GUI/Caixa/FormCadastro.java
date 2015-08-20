@@ -157,14 +157,14 @@ public class FormCadastro extends javax.swing.JFrame {
 
     private void jButtonSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSalvarActionPerformed
         // Salvar tipo
-        double preco;
+        float preco;
 
         if (!"".equals(jTextDescricao.getText())
                 && !"".equals(jTextPreco.getText())
                 && !"".equals(jTextData.getText())) {
 
             try {
-                preco = Double.parseDouble(jTextPreco.getText().replaceAll(",", "."));
+                preco = Float.parseFloat(jTextPreco.getText().replaceAll(",", "."));
 
             } catch (Throwable e) {
                 JOptionPane.showMessageDialog(null,
@@ -176,7 +176,7 @@ public class FormCadastro extends javax.swing.JFrame {
             caixa.setStatus(true);
             caixa.setPreco(preco);
             caixa.setTipo(tipo);
-            caixa.setData_caixa(jTextData.getText());
+            caixa.setDataCaixa(jTextData.getText());
 
             CaixaRN caixaRN = new CaixaRN();
             caixaRN.salvar(caixa);

@@ -27,11 +27,11 @@ public class Vendas implements Serializable {
     @JoinColumn(name = "id_produto")
     private Produto produto;
 
-    @Column
-    private double preco_vendido;
+    @Column(name = "preco_vendido")
+    private float precoVendido;
 
-    @Column
-    private String data_venda;
+    @Column(name = "data_venda", length = 11)
+    private String dataVenda;
 
     @Column
     private int quantidade;
@@ -66,20 +66,20 @@ public class Vendas implements Serializable {
         this.produto = produto;
     }
 
-    public double getPreco_vendido() {
-        return preco_vendido;
+    public float getPrecoVendido() {
+        return precoVendido;
     }
 
-    public void setPreco_vendido(double preco_vendido) {
-        this.preco_vendido = preco_vendido;
+    public void setPrecoVendido(float precoVendido) {
+        this.precoVendido = precoVendido;
     }
 
-    public String getData_venda() {
-        return data_venda;
+    public String getDataVenda() {
+        return dataVenda;
     }
 
-    public void setData_venda(String data_venda) {
-        this.data_venda = data_venda;
+    public void setDataVenda(String dataVenda) {
+        this.dataVenda = dataVenda;
     }
 
     public int getQuantidade() {

@@ -37,7 +37,7 @@ public class ProdutoTableModel extends AbstractTableModel {
             case 1:
                 return produtos.get(rowIndex).getNome();
             case 2:
-                return "R$ " + produtos.get(rowIndex).getPreco_venda();
+                return "R$ " + produtos.get(rowIndex).getPrecoVenda();
             case 3:
                 return produtos.get(rowIndex).getQuantidade();
             default:
