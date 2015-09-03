@@ -58,7 +58,7 @@ public class VendasDAOHibernate implements VendasDAO {
         transacao = sessao.beginTransaction();
         Criteria filtro = sessao.createCriteria(Vendas.class)
                 .add(Restrictions.eq("status", true))
-                .addOrder(Order.asc("data_venda"));
+                .addOrder(Order.asc("dataVenda"));
         historico = filtro.list();
         transacao.commit();
         return historico;
@@ -70,8 +70,8 @@ public class VendasDAOHibernate implements VendasDAO {
         transacao = sessao.beginTransaction();
         Criteria filtro = sessao.createCriteria(Vendas.class)
                 .add(Restrictions.eq("status", true));
-        filtro.addOrder(Order.asc("data_venda"));
-        historico = filtro.add(Restrictions.like("data_venda", "%" + data_venda + "%")).list();
+        filtro.addOrder(Order.asc("dataVenda"));
+        historico = filtro.add(Restrictions.like("dataVenda", "%" + data_venda + "%")).list();
         transacao.commit();
         return historico;
     }
@@ -91,7 +91,7 @@ public class VendasDAOHibernate implements VendasDAO {
         List<Vendas> vendas;
         transacao = sessao.beginTransaction();
         Criteria filtro = sessao.createCriteria(Vendas.class);
-        filtro.addOrder(Order.asc("data_venda"));
+        filtro.addOrder(Order.asc("dataVenda"));
         vendas = filtro.add(Restrictions.eq("cliente", cliente)).list();
         transacao.commit();
         return vendas;
@@ -102,7 +102,7 @@ public class VendasDAOHibernate implements VendasDAO {
         List<Vendas> vendas;
         transacao = sessao.beginTransaction();
         Criteria filtro = sessao.createCriteria(Vendas.class);
-        filtro.addOrder(Order.asc("data_venda"));
+        filtro.addOrder(Order.asc("dataVenda"));
         vendas = filtro.add(Restrictions.eq("produto", produto)).list();
         transacao.commit();
         return vendas;

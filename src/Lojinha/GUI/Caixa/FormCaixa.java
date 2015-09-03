@@ -35,10 +35,10 @@ public class FormCaixa extends javax.swing.JFrame {
         double ganho = 0;
         caixaRN = new CaixaRN();
         List<Caixa> ganhos = caixaRN.listarGanhos();
-        for (int i = 0; i < ganhos.size(); i++) {
+        for (Caixa ganho1 : ganhos) {
             try {
-                ganho = ganho + ganhos.get(i).getPreco();
-            } catch (Throwable e) {
+                ganho = ganho + ganho1.getPreco();
+            }catch (Throwable e) {
                 break;
             }
         }
@@ -46,10 +46,10 @@ public class FormCaixa extends javax.swing.JFrame {
         double gasto = 0;
         caixaRN = new CaixaRN();
         List<Caixa> gastos = caixaRN.listarGastos();
-        for (int i = 0; i < gastos.size(); i++) {
+        for (Caixa gasto1 : gastos) {
             try {
-                gasto = gasto + gastos.get(i).getPreco();
-            } catch (Throwable e) {
+                gasto = gasto + gasto1.getPreco();
+            }catch (Throwable e) {
                 break;
             }
         }
